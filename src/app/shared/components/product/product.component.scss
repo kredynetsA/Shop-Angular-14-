@@ -1,6 +1,12 @@
 .product {
   max-width: 200px;
   margin: 10px;
+  &_title {
+    font-size: 20px;
+  }
+  &_desc {
+    margin-top: 10px;
+  }
   &_price {
     font-size: 20px;
   }

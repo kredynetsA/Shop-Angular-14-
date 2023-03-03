@@ -1,0 +1,22 @@
+.product {
+  display: flex;
+  margin-top: 30px;
+  &_image-wrapper {
+    width: 40%;
+  }
+  &_image {
+    width: 100%;
+  }
+  &_info {
+    margin-left: 40px;
+  }
+  &_title {
+    font-weight: bolder;
+  }
+  &_price {
+    font-size: 20px;
+  }
+  &_cart-button {
+    margin: 20px 0 0;
+  }
+}
