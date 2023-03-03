@@ -1,0 +1,13 @@
+.product {
+  max-width: 200px;
+  margin: 10px;
+  &_price {
+    font-size: 20px;
+  }
+  &_actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0 10px;
+  }
+}
