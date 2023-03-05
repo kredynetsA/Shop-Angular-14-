@@ -12,6 +12,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import { ProductComponent } from './shared/components/product/product.component';
 import {MatCardModule} from "@angular/material/card";
+import {AdminModule} from "./admin/admin.module";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {MatCardModule} from "@angular/material/card";
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]
