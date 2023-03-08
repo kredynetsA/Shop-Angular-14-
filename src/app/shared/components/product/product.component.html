@@ -1,15 +1,28 @@
-<mat-card class="product" [routerLink]="['product/', 123]">
+<mat-card class="product">
   <img mat-card-image
-       src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+       src="{{product.img}}"
        alt="product photo">
   <mat-card-content>
-    <span class="product_title">Product Title</span>
+    <span class="product_title">{{product.title}}</span>
     <p class="product_desc">
-      The Shiba Inu is the smallest of the six original.
+      {{product.desc}}
     </p>
   </mat-card-content>
   <mat-card-actions class="product_actions">
-    <div class="product_price"> 24 $</div>
-    <button mat-icon-button color="primary"><mat-icon>shopping_cart</mat-icon></button>
+    <div class="product_price">{{product.price}} $</div>
+   <div>
+
+     <button mat-icon-button
+             [routerLink]="['product/', 123]"
+              color="primary">
+       <mat-icon>article</mat-icon>
+     </button>
+     <button mat-icon-button
+             (click)="addToCart(product)"
+             color="primary">
+       <mat-icon>shopping_cart</mat-icon>
+     </button>
+   </div>
+
   </mat-card-actions>
 </mat-card>

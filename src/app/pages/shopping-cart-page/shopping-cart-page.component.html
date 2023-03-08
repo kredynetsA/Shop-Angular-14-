@@ -1,0 +1,21 @@
+<div class="container">
+  <h1 class="title"> Shopping Cart</h1>
+
+  <div class="cart">
+    <div class="products">
+
+      <ag-grid-angular
+        style="width: 100%; height: 350px;"
+        class="ag-theme-alpine"
+        [rowData]="rowData"
+        [columnDefs]="columnDefs"
+        (gridReady)="onGridReady($event)"
+      >
+      </ag-grid-angular>
+    </div>
+
+    <div class="total">
+      cart total
+    </div>
+  </div>
+</div>
