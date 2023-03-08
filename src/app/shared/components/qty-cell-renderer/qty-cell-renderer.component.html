@@ -1,0 +1,9 @@
+<div class="quantity">
+  <button class="quantity_button" (click)="minus()">
+    <mat-icon>remove</mat-icon>
+  </button>
+  <input class="quantity_input" type="number" value="{{qty}}" [(ngModel)]="qty">
+  <button class="quantity_button" (click)="plus()">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
