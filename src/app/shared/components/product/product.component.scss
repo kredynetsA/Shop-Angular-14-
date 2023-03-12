@@ -11,7 +11,11 @@
     max-height: 230px;
   }
   &_title {
-    font-size: 20px;
+    font-size: 18px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   &_desc {
     margin-top: 10px;

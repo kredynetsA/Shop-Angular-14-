@@ -13,4 +13,7 @@ export class ProductService {
   getProducts() {
     return this.http.get<Product[]>('https://fakestoreapi.com/products')
   }
+  getProductById(id: number) {
+    return this.http.get<Product>(`https://fakestoreapi.com/products/${id}`)
+  }
 }

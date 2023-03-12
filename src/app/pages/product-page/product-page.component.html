@@ -1,15 +1,15 @@
 <div class="container">
-  <div class="product">
+  <div class="product" *ngIf="product | async as product; else loading">
     <div class="product_image-wrapper">
       <img class="product_image"
-           src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+           src="{{product.image}}"
            alt="product photo">
     </div>
 
     <div class="product_info">
-      <h1 class="product_title">Product Title</h1>
-      <p class="product_desc">The Shiba Inu is the smallest of the six original.</p>
-      <div class="product_price">Price: 20 $</div>
+      <h1 class="product_title">{{product.title}}</h1>
+      <p class="product_desc">{{product.description}}</p>
+      <div class="product_price">Price: {{product.price}} $</div>
       <button mat-raised-button
               color="primary"
               class="product_cart-button"
@@ -21,3 +21,6 @@
     </div>
   </div>
 </div>
+<ng-template #loading>
+  <mat-spinner></mat-spinner>
+</ng-template>
