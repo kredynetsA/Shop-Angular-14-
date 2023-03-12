@@ -1,20 +1,27 @@
 .product {
   display: flex;
-  margin-top: 30px;
+  justify-content: space-evenly;
+  margin-top: 50px;
   &_image-wrapper {
-    width: 40%;
+    width: 18%;
   }
   &_image {
     width: 100%;
   }
   &_info {
-    margin-left: 40px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   &_title {
-    font-weight: bolder;
+    font-size: 18px;
+  }
+  &_desc {
+    margin-bottom: 30px;
   }
   &_price {
-    font-size: 20px;
+    font-size: 18px;
   }
   &_cart-button {
     margin: 20px 0 0;
