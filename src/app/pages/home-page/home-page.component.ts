@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Product} from "../../product.interface";
+import {ProductService} from "../../services/product.service";
 
 
 @Component({
@@ -8,14 +9,14 @@ import {Product} from "../../product.interface";
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
-  products: Product[] = [
-    {id: 1, productLink:'https://material.angular.io/assets/img/examples/shiba2.jpg', img: 'https://material.angular.io/assets/img/examples/shiba2.jpg', name: 'Product title', desc:'The Shiba Inu is the smallest of the six original.', qty: 1, price: 35,  },
-    { id: 2, productLink:'https://material.angular.io/assets/img/examples/shiba2.jpg', img: 'https://material.angular.io/assets/img/examples/shiba2.jpg', name: 'Product title', desc:'The Shiba Inu is the smallest of the six original.', qty: 1, price: 20,  },
-    { id: 2, productLink:'https://material.angular.io/assets/img/examples/shiba2.jpg', img: 'https://material.angular.io/assets/img/examples/shiba2.jpg', name: 'Product title', desc:'The Shiba Inu is the smallest of the six original.', qty: 1, price: 40,  },
-  ]
-  constructor() { }
+  products: Product[] = [];
+  constructor(private productService: ProductService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.productService.getProducts().subscribe((res: Product[]) => {
+      this.products = res
+    }, (err) => {
+      console.warn('Error:', err)
+    })
   }
-
 }

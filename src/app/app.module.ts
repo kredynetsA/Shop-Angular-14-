@@ -22,6 +22,8 @@ import { QtyCellRendererComponent } from './shared/components/qty-cell-renderer/
 import {FormsModule} from "@angular/forms";
 import { ActionsCellRendererComponent } from './shared/components/actions-cell-renderer/actions-cell-renderer.component';
 import { TotalCellRendererComponent } from './shared/components/total-cell-renderer/total-cell-renderer.component';
+import {HttpClientModule} from "@angular/common/http";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
@@ -49,7 +51,8 @@ import { TotalCellRendererComponent } from './shared/components/total-cell-rende
     AdminModule,
     AgGridModule,
     FormsModule,
-
+    HttpClientModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
