@@ -1,28 +1,21 @@
-<mat-card class="product">
-  <img mat-card-image
+<mat-card class="product" [routerLink]="['product/', product.id]">
+  <img class="product_image"
        src="{{product.image}}"
        alt="product photo">
   <mat-card-content>
     <span class="product_title">{{product.name}}</span>
     <p class="product_desc">
-      {{product.desc}}
+      {{product.description}}
     </p>
   </mat-card-content>
   <mat-card-actions class="product_actions">
     <div class="product_price">{{product.price}} $</div>
    <div>
-
-     <button mat-icon-button
-             [routerLink]="['product/', 123]"
-              color="primary">
-       <mat-icon>article</mat-icon>
-     </button>
      <button mat-icon-button
              (click)="addToCart(product)"
              color="primary">
        <mat-icon>shopping_cart</mat-icon>
      </button>
    </div>
-
   </mat-card-actions>
 </mat-card>

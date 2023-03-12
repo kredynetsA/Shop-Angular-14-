@@ -15,7 +15,6 @@ export class HomePageComponent implements OnInit {
   ngOnInit() {
     this.productService.getProducts().subscribe((res: Product[]) => {
       this.products = res
-      console.log(res)
     }, (err) => {
       console.warn('Error:', err)
     })

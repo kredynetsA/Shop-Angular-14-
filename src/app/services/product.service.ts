@@ -11,6 +11,6 @@ export class ProductService {
   constructor(protected http: HttpClient) { }
 
   getProducts() {
-    return this.http.get<Product[]>('https://fakestoreapi.com/products?limit=5')
+    return this.http.get<Product[]>('https://fakestoreapi.com/products')
   }
 }
