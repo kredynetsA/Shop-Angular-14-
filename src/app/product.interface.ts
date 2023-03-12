@@ -3,7 +3,7 @@ export interface Product {
   productLink: string,
   image: string,
   name: string,
-  desc: string,
+  description: string,
   qty?: number
   price:number
 }
