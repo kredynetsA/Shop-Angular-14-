@@ -24,6 +24,7 @@ import { ActionsCellRendererComponent } from './shared/components/actions-cell-r
 import { TotalCellRendererComponent } from './shared/components/total-cell-renderer/total-cell-renderer.component';
 import {HttpClientModule} from "@angular/common/http";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
     AgGridModule,
     FormsModule,
     HttpClientModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

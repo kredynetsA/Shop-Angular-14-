@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ICellRendererAngularComp} from "ag-grid-angular";
+import {Product} from "../../../product.interface";
 
 @Component({
   selector: 'app-actions-cell-renderer',
@@ -8,8 +9,15 @@ import {ICellRendererAngularComp} from "ag-grid-angular";
 })
 export class ActionsCellRendererComponent implements ICellRendererAngularComp {
   params: any;
-  agInit(params: any): void{}
 
+  productId: number = 0;
+  agInit(params: any): void{
+    this.params = params
+  }
+  delete() {
+    this.productId = this.params.data
+    console.log('delete button', this.productId)
+  }
   refresh() {
     return false;
   }

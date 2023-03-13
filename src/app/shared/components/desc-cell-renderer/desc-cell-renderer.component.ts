@@ -13,9 +13,9 @@ export class DescCellRendererComponent implements ICellRendererAngularComp {
   desc: string = '';
   agInit(params: any): void{
     this.params = params
-    this.title = this.params.data.name
+    this.title = this.params.data.title
     this.link = this.params.data.productLink
-    this.desc = this.params.data.desc
+    this.desc = this.params.data.description
   }
 
   refresh() {

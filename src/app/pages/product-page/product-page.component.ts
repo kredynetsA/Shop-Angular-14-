@@ -3,6 +3,8 @@ import {ActivatedRoute, Params} from "@angular/router";
 import {ProductService} from "../../services/product.service";
 import {Observable, switchMap} from "rxjs";
 import {Product} from "../../product.interface";
+import {CartService} from "../../services/cart.service";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-product-page',
@@ -12,7 +14,12 @@ import {Product} from "../../product.interface";
 
 export class ProductPageComponent implements OnInit {
   product?: Observable<Product>;
-  constructor(private route: ActivatedRoute, private productService: ProductService) { }
+  constructor(private route: ActivatedRoute,
+              private productService: ProductService,
+              private cartService: CartService,
+              private _snackBar: MatSnackBar
+
+  ) { }
 
   ngOnInit(): void {
     this.product = this.route.params.pipe(
@@ -20,5 +27,12 @@ export class ProductPageComponent implements OnInit {
         return this.productService.getProductById(params['id'])
       })
     )
+  }
+
+  addToCart(product: Product) {
+    this.cartService.addToCart(product);
+    this._snackBar.open('Added To Cart', 'Close', {
+      duration: 4 * 1000
+    });
   }
 }

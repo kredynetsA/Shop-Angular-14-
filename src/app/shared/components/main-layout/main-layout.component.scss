@@ -12,3 +12,16 @@
   }
 }
 
+.cart {
+  &_items {
+    font-size: 13px;
+    color: white;
+    background: red;
+    border-radius: 23px;
+    padding: 0 5px;
+    position: relative;
+    left: -20px;
+    bottom: -8px;
+    opacity: 0.9;
+  }
+}

@@ -11,7 +11,7 @@ export class QtyCellRendererComponent implements ICellRendererAngularComp {
   qty: number = 1 ;
   agInit(params: any): void{
     this.params = params
-    this.qty = this.params.data.qty
+    this.qty = this.params.data.quantity
   }
 
   plus() {
@@ -24,8 +24,9 @@ export class QtyCellRendererComponent implements ICellRendererAngularComp {
   }
   refresh(params: any) {
     // this.params.data.qty = this.qty
-    this.qty = this.params.value
-    return true;
+    // this.qty = this.params.value
+    // return true;
+    return false
   }
 
 }
