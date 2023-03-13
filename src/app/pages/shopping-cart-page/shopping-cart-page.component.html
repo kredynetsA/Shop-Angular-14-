@@ -1,21 +1,38 @@
 <div class="container">
-  <h1 class="title"> Shopping Cart</h1>
+  <div class="cart-header">
+    <h1 class="title"> Shopping Cart</h1>
 
-  <div class="cart">
+    <button mat-raised-button
+            color="warn"
+            *ngIf="products.length"
+            (click)="clearCart()"
+    >
+      <mat-icon>delete</mat-icon>
+      Clear Cart
+    </button>
+  </div>
+
+
+  <div class="cart" *ngIf="products.length; else message" >
     <div class="products">
-
-      <ag-grid-angular
-        style="width: 100%; height: 700px;"
-        class="ag-theme-alpine"
-        [rowData]="rowData"
-        [columnDefs]="columnDefs"
-        (gridReady)="onGridReady($event)"
-      >
-      </ag-grid-angular>
+      <app-cart-product-item *ngFor="let product of products"
+                             [product]="product"
+      ></app-cart-product-item>
     </div>
-
     <div class="total">
       cart total
     </div>
   </div>
+  <ng-template #message >
+    <div class="message">
+      <p class="message_title">Cart Is Empty</p>
+      <button
+        routerLink="/"
+        mat-flat-button
+        color="primary">
+        <mat-icon>arrow_back</mat-icon>
+        Back To Store
+      </button>
+    </div>
+  </ng-template>
 </div>
