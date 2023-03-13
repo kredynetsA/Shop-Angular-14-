@@ -11,7 +11,7 @@ export class ImgCellRendererComponent implements ICellRendererAngularComp {
   src: string = '';
   agInit(params: any): void{
     this.params = params
-    this.src = this.params.data.img
+    this.src = this.params.data.image
   }
 
   refresh() {

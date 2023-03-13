@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Product} from "../../product.interface";
 import {ProductService} from "../../services/product.service";
+import {CartService} from "../../services/cart.service";
 
 
 @Component({
@@ -15,8 +16,13 @@ export class HomePageComponent implements OnInit {
   ngOnInit() {
     this.productService.getProducts().subscribe((res: Product[]) => {
       this.products = res
+      this.products.forEach((p:Product) => {
+        Object.assign(p, {quantity: 1})
+      })
     }, (err) => {
       console.warn('Error:', err)
     })
   }
+
+
 }

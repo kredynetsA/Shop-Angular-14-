@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CartService} from "../../../services/cart.service";
 
 @Component({
   selector: 'app-main-layout',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-layout.component.scss']
 })
 export class MainLayoutComponent implements OnInit {
-
-  constructor() { }
+  cartItems: number = 0;
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
+    this.cartService.getProducts().subscribe((res) => {
+      this.cartItems = res.length;
+    })
   }
 
 }
