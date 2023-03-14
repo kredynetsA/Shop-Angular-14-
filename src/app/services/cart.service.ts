@@ -9,6 +9,7 @@ import {BehaviorSubject} from "rxjs";
 export class CartService {
   cartList: Product[] = [];
   productList = new BehaviorSubject<any>([]);
+  productQty: any = 1;
   constructor(protected http: HttpClient) { }
   getProducts() {
     return this.productList.asObservable();
@@ -18,14 +19,14 @@ export class CartService {
     this.productList.next(product);
   }
   addToCart(product: Product) {
-
     if (!this.cartList.includes(product)) {
       this.cartList.push(product)
       this.productList.next(this.cartList);
+    } else {
+      this.productQty = product?.quantity
+      this.productQty++
+      this.updateProductQty(product.id, this.productQty)
     }
-    // this.cartList.push(product);
-    this.productList.next(this.cartList);
-
   }
 
   deleteProduct(productId: number) {
@@ -42,25 +43,6 @@ export class CartService {
     this.productList.next(this.cartList)
   }
 
-  checkDuplicates(product: Product) {
-    this.cartList.map((p: Product, i) => {
-      if (product.id === p.id) {
-        this.cartList[i].quantity =+1
-        console.log(this.cartList)
-        this.productList.next(this.cartList);
-        return
-      }
-    })
-
-    // this.cartList.map((p: Product, i) => {
-    //   if (product.id === p.id) {
-    //     // const prodQty = (this.cartList[i].quantity ?? 0 ) +1
-    //     const prodQty = this.cartList[i].quantity
-    //     console.log(prodQty , 'product qty')
-    //     this.productList.next(this.cartList);
-    //   }
-    // })
-  }
   updateProductQty(productId: number, qty: number) {
     this.cartList.map((p:Product, i) => {
       if (p.id === productId) {
