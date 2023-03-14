@@ -6,4 +6,5 @@ export interface Product {
   description: string,
   quantity?: number
   price:number
+  totalPrice: number
 }

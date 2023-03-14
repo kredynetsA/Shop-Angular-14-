@@ -4,19 +4,18 @@
     display: flex;
     justify-content: flex-end;
   }
-  &_image {
-    max-width: 10%;
-  }
-  &_title {
-    font-weight: bold;
-  }
-  &_title-link {
-    color: inherit;
-  }
   &_wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+  }
+  &_image {
+    min-width: 10%;
+    max-width: 20%;
+    margin-left: 20px;
+  }
+  &_title {
+    font-weight: bold;
   }
   &_info {
     margin: 0 20px;
@@ -24,8 +23,7 @@
   }
   &_price {
     font-size: 18px;
-    font-weight: bold;
-    margin-right: 10px;
+    margin: 0 15px;
   }
   &_quantity {
     display: flex;

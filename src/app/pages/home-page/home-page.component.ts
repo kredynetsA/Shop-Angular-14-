@@ -17,7 +17,7 @@ export class HomePageComponent implements OnInit {
     this.productService.getProducts().subscribe((res: Product[]) => {
       this.products = res
       this.products.forEach((p:Product) => {
-        Object.assign(p, {quantity: 1})
+        Object.assign(p, {quantity: 1, totalPrice: p.price})
       })
     }, (err) => {
       console.warn('Error:', err)

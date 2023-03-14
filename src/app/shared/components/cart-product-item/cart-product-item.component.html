@@ -5,20 +5,16 @@
       <mat-icon>close</mat-icon>
     </button>
   </div>
-
   <div class="product_wrapper">
     <img class="product_image"
-         src="{{product.image}}" >
-
+         src="{{product.image}}">
     <div class="product_info">
       <h3 class="product_title">
-        <a class="product_title-link" href="#">{{product.title}}</a>
+        {{product.title}}
       </h3>
-
       <p class="product_desc">
         {{product.description}}
       </p>
-
     </div>
     <div class="product_quantity">
       <button mat-icon-button
@@ -37,6 +33,7 @@
   </div>
   <div class="product_footer">
     <p class="product_price">Price: {{product.price}} $</p>
+    <p class="product_price" *ngIf="showTotal">Total Price: {{product.totalPrice}} $</p>
   </div>
 </mat-card>
 

@@ -10,13 +10,15 @@ import {Product} from "../../product.interface";
 })
 export class ShoppingCartPageComponent implements OnInit {
   products: Product[] = [];
-
+  cartTotalPrice: any = 0;
   constructor(private cartService: CartService) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.cartService.getProducts().subscribe((res) => {
       this.products = res
+      this.cartTotalPrice = this.cartService.getTotalPrice();
     })
+
   }
 
   clearCart() {
