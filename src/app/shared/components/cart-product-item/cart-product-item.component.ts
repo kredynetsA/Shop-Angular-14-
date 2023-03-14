@@ -9,10 +9,11 @@ import {CartService} from "../../../services/cart.service";
 })
 export class CartProductItemComponent implements OnInit {
   @Input() product!: Product;
-  quantity: number = 1;
+  quantity: any;
   constructor(private carService: CartService) { }
 
   ngOnInit(): void {
+    this.quantity = this.product.quantity
   }
 
   plus(productId: number) {
