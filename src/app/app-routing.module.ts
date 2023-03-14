@@ -12,9 +12,6 @@ const routes: Routes = [
       {path: 'product/:id', component: ProductPageComponent},
       {path: 'shopping-cart', component: ShoppingCartPageComponent}
     ]},
-  {
-    path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
-  }
 ];
 
 @NgModule({

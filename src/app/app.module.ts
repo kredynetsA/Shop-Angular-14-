@@ -12,7 +12,6 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import { ProductComponent } from './shared/components/product/product.component';
 import {MatCardModule} from "@angular/material/card";
-import {AdminModule} from "./admin/admin.module";
 import { ShoppingCartPageComponent } from './pages/shopping-cart-page/shopping-cart-page.component';
 import { CartProductItemComponent } from './shared/components/cart-product-item/cart-product-item.component';
 import {FormsModule} from "@angular/forms";
@@ -38,7 +37,6 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    AdminModule,
     FormsModule,
     HttpClientModule,
     MatProgressSpinnerModule,
