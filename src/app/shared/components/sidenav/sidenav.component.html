@@ -1,0 +1,11 @@
+<mat-sidenav class="sidenav" mode="side" opened="true" [fixedInViewport]="true"  >
+  <div class="sidenav_button" routerLink="/">
+    All Products
+  </div>
+  <div class="sidenav_button"
+       *ngFor="let category of categories"
+       [routerLink]="['category/', category]">
+    {{category}}
+  </div>
+</mat-sidenav>
+

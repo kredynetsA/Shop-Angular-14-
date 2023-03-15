@@ -1,9 +1,10 @@
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 0 40px;
+  padding: 0 30px;
   z-index: 3;
-  position: absolute;
+  position: fixed;
+  top: 0;
   &_home-button {
     background: transparent;
     font-size: 20px;
@@ -28,19 +29,21 @@
   }
 }
 
-.sidenav {
-  width: 280px;
-  background-color: #364abd;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
-  &_button {
-    padding: 20px 0;
-    border-bottom: 1px solid #ffffff42;
-    text-transform: capitalize;
-
-  }
-}
+//.sidenav {
+//  width: 250px;
+//  background-color: #364abd;
+//  color: white;
+//  text-align: left;
+//  padding: 10px 0;
+//  &_button {
+//    padding: 20px 0 20px 60px;
+//    border-bottom: 1px solid #ffffff42;
+//    text-transform: capitalize;
+//    &:first-child {
+//      margin-top: 50px;
+//    }
+//  }
+//}
 
 
 

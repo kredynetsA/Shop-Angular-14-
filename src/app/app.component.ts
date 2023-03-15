@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ProductService} from "./services/product.service";
 import {CartService} from "./services/cart.service";
 
@@ -7,17 +7,17 @@ import {CartService} from "./services/cart.service";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   cartItems: number = 0;
-  categories: any;
+  subscription: any;
   constructor(private cartService: CartService, private productService: ProductService) { }
 
   ngOnInit(): void {
-    this.cartService.getProducts().subscribe((res) => {
+    this.subscription = this.cartService.getProducts().subscribe((res) => {
       this.cartItems = res.length;
     })
-    this.productService.getAllCategories().subscribe((res) => {
-      this.categories = res
-    })
+  }
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }

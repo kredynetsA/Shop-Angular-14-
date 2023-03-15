@@ -11,7 +11,7 @@ import {ActivatedRoute, Params, Router} from "@angular/router";
 })
 export class CategoryPageComponent implements OnInit {
   products: Product[] = [];
-  category: any;
+  category: string = '';
   constructor(private productService: ProductService,
               private route: ActivatedRoute,
               private router: Router
@@ -20,7 +20,7 @@ export class CategoryPageComponent implements OnInit {
   ngOnInit(): void {
      this.route.params.subscribe((res) => {
        this.category = res['id']
-       if (this.category != this.products[0].category) {
+       if (this.category != this.products[0]?.category) {
          this.getProducts()
        }
      })
@@ -34,6 +34,5 @@ export class CategoryPageComponent implements OnInit {
         Object.assign(p, {quantity: 1, totalPrice: p.price})
       })
     })
-
   }
 }

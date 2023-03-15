@@ -1,12 +1,9 @@
-<div class="container">
-  <h1 class="page-title">{{category}}</h1>
-  <div class="products" *ngIf="products; else loading">
-    <app-product *ngFor="let product of products"
-                 [product]="product"
-    ></app-product>
-  </div>
+<h1 class="page-title">{{category}}</h1>
+<div class="products" *ngIf="products; else loading">
+  <app-product *ngFor="let product of products"
+               [product]="product"
+  ></app-product>
 </div>
-
 <ng-template #loading>
   <mat-spinner></mat-spinner>
 </ng-template>

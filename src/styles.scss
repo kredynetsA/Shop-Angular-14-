@@ -24,12 +24,16 @@ time, mark, audio, video {
 }
 
 .container {
-  width: 95%;
-  margin: 0 auto;
+ margin: 85px 35px 0 220px;
 }
 
 .mat-spinner {
   margin: 10% auto;
+}
+
+.page-title {
+  text-transform: capitalize;
+  margin: 20px 0 20px 0;
 }
 
 
