@@ -1,0 +1,46 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+  z-index: 3;
+  position: absolute;
+  &_home-button {
+    background: transparent;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+.cart {
+  &_items {
+    font-size: 13px;
+    color: white;
+    background: red;
+    border-radius: 23px;
+    padding: 0 5px;
+    position: relative;
+    left: -20px;
+    bottom: -8px;
+    opacity: 0.9;
+  }
+}
+
+.sidenav {
+  width: 280px;
+  background-color: #364abd;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  &_button {
+    padding: 20px 0;
+    border-bottom: 1px solid #ffffff42;
+    text-transform: capitalize;
+
+  }
+}
+
+
+

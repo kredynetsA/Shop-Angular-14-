@@ -1,1 +1,29 @@
-<router-outlet></router-outlet>
+<mat-toolbar color="primary" class="header">
+  <div>
+    <button class="header_home-button" routerLink="/">My App</button>
+  </div>
+
+  <div>
+    <button class="cart" mat-icon-button routerLink="shopping-cart">
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+    <span class="cart_items" *ngIf="cartItems">{{cartItems}}</span>
+  </div>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav class="sidenav" mode="side" opened="true" [fixedInViewport]="true"  >
+    <div class="sidenav_button" routerLink="/">
+      All Products
+    </div>
+    <div class="sidenav_button"
+         *ngFor="let category of categories"
+         [routerLink]="['category/', category]">
+      {{category}}
+    </div>
+
+  </mat-sidenav>
+  <router-outlet></router-outlet>
+
+</mat-sidenav-container>
+
