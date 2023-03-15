@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductService} from "../../services/product.service";
 import {Product} from "../../product.interface";
-import {switchMap} from "rxjs";
-import {ActivatedRoute, Params, Router} from "@angular/router";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-category-page',
@@ -14,7 +13,6 @@ export class CategoryPageComponent implements OnInit {
   category: string = '';
   constructor(private productService: ProductService,
               private route: ActivatedRoute,
-              private router: Router
               ) { }
 
   ngOnInit(): void {
