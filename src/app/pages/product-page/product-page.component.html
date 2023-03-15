@@ -1,24 +1,22 @@
-<div class="container">
-  <div class="product" *ngIf="product | async as product; else loading">
-    <div class="product_image-wrapper">
-      <img class="product_image"
-           src="{{product.image}}"
-           alt="product photo">
-    </div>
+<div class="product" *ngIf="product | async as product; else loading">
+  <div class="product_image-wrapper">
+    <img class="product_image"
+         src="{{product.image}}"
+         alt="product photo">
+  </div>
 
-    <div class="product_info">
-      <h1 class="product_title">{{product.title}}</h1>
-      <p class="product_desc">{{product.description}}</p>
-      <div class="product_price">Price: {{product.price}} $</div>
-      <button mat-raised-button
-              color="primary"
-              class="product_cart-button"
-              (click)="addToCart(product)"
-      >
-        <mat-icon>shopping_cart</mat-icon>
-        Add To Cart
-      </button>
-    </div>
+  <div class="product_info">
+    <h1 class="product_title">{{product.title}}</h1>
+    <p class="product_desc">{{product.description}}</p>
+    <div class="product_price">Price: {{product.price}} $</div>
+    <button mat-raised-button
+            color="primary"
+            class="product_cart-button"
+            (click)="addToCart(product)"
+    >
+      <mat-icon>shopping_cart</mat-icon>
+      Add To Cart
+    </button>
   </div>
 </div>
 <ng-template #loading>

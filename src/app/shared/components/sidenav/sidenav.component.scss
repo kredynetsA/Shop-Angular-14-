@@ -1,0 +1,15 @@
+.sidenav {
+  width: 200px;
+  background-color: #364abd;
+  color: white;
+  text-align: left;
+  padding: 10px 0;
+  &_button {
+    padding: 20px 0 20px 40px;
+    border-bottom: 1px solid #ffffff42;
+    text-transform: capitalize;
+    &:first-child {
+      margin-top: 50px;
+    }
+  }
+}
