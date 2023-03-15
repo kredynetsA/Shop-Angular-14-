@@ -10,6 +10,7 @@ export class CartService {
   cartList: Product[] = [];
   productList = new BehaviorSubject<any>([]);
   productQty: any = 1;
+  totalPrice: any;
   constructor(protected http: HttpClient) { }
   getProducts() {
     return this.productList.asObservable();
@@ -25,10 +26,10 @@ export class CartService {
     } else {
       this.productQty = product?.quantity
       this.productQty++
-      this.updateProductQty(product.id, this.productQty)
+      this.totalPrice = product.price * this.productQty
+      this.updateProductQty(product.id, this.productQty, this.totalPrice)
     }
   }
-
   deleteProduct(productId: number) {
     this.cartList.map((p: Product, i) => {
       if (productId === p.id) {
@@ -37,20 +38,25 @@ export class CartService {
     })
     this.productList.next(this.cartList)
   }
-
   clearCart() {
     this.cartList = [];
     this.productList.next(this.cartList)
   }
-
-  updateProductQty(productId: number, qty: number) {
+  updateProductQty(productId: number, qty: number, totalPrice: any) {
     this.cartList.map((p:Product, i) => {
       if (p.id === productId) {
         this.cartList[i].quantity = qty
+        this.cartList[i].totalPrice = totalPrice
         this.productList.next(this.cartList)
       }
     })
   }
-
+  getTotalPrice() {
+    let totalPrice = 0
+    this.cartList.map((p:Product) => {
+      totalPrice += p.totalPrice
+    })
+    return totalPrice.toFixed(2)
+  }
 }
 

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Params} from "@angular/router";
 import {ProductService} from "../../services/product.service";
 import {Observable, switchMap} from "rxjs";
@@ -12,8 +12,9 @@ import {MatSnackBar} from "@angular/material/snack-bar";
   styleUrls: ['./product-page.component.scss']
 })
 
-export class ProductPageComponent implements OnInit {
+export class ProductPageComponent implements OnInit, OnDestroy {
   product?: Observable<Product>;
+  subscription: any;
   constructor(private route: ActivatedRoute,
               private productService: ProductService,
               private cartService: CartService,
@@ -22,7 +23,7 @@ export class ProductPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.product = this.route.params.pipe(
+   this.subscription = this.product = this.route.params.pipe(
       switchMap((params: Params) => {
         return this.productService.getProductById(params['id'])
       })
@@ -34,5 +35,9 @@ export class ProductPageComponent implements OnInit {
     this._snackBar.open('Added To Cart', 'Close', {
       duration: 4 * 1000
     });
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe()
   }
 }
