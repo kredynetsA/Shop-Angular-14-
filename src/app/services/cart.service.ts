@@ -30,7 +30,6 @@ export class CartService {
       this.updateProductQty(product.id, this.productQty, this.totalPrice)
     }
   }
-
   deleteProduct(productId: number) {
     this.cartList.map((p: Product, i) => {
       if (productId === p.id) {
@@ -39,12 +38,10 @@ export class CartService {
     })
     this.productList.next(this.cartList)
   }
-
   clearCart() {
     this.cartList = [];
     this.productList.next(this.cartList)
   }
-
   updateProductQty(productId: number, qty: number, totalPrice: any) {
     this.cartList.map((p:Product, i) => {
       if (p.id === productId) {
@@ -55,11 +52,11 @@ export class CartService {
     })
   }
   getTotalPrice() {
-    let totalPrice: number = 0
+    let totalPrice = 0
     this.cartList.map((p:Product) => {
       totalPrice += p.totalPrice
     })
-    return totalPrice
+    return totalPrice.toFixed(2)
   }
 }
 

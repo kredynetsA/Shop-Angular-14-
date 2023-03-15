@@ -1,12 +1,10 @@
 <div class="container">
   <div class="cart-header">
     <h1 class="title"> Shopping Cart</h1>
-
     <button mat-raised-button
             color="warn"
             *ngIf="products.length"
-            (click)="clearCart()"
-    >
+            (click)="clearCart()">
       <mat-icon>delete</mat-icon>
       Clear Cart
     </button>
@@ -20,8 +18,32 @@
       ></app-cart-product-item>
     </div>
     <div class="total">
-      cart total
-      {{cartTotalPrice}}
+      <mat-card >
+        <h2 class="total_title">Order Summary</h2>
+        <div class="total_desc">
+          <p>{{products.length}} Products </p>
+          <p>{{cartTotalPrice}}</p>
+        </div>
+        <div class="total_desc">
+          <p>Shipping</p>
+          <p>Free</p>
+        </div>
+        <div class="total_desc total_desc__bold">
+          <p>Total</p>
+          <p>{{cartTotalPrice}}</p>
+        </div>
+        <div class="total_checkout">
+          <button class="total_button" mat-raised-button color="primary">Checkout</button>
+        </div>
+
+
+
+      </mat-card>
+
+
+
+
+
     </div>
   </div>
   <ng-template #message >

@@ -36,7 +36,7 @@ export class CartProductItemComponent implements OnInit {
     if (this.quantity != 0 && this.quantity != 1) {
       this.totalPrice = this.totalPrice! - this.price!
       this.quantity = this.quantity!-1
-      this.carService.updateProductQty(productId, this.quantity, this.totalPrice.toFixed(2))
+      this.carService.updateProductQty(productId, this.quantity, this.totalPrice)
     }
     if (this.quantity == 1) {
       this.showTotal = false

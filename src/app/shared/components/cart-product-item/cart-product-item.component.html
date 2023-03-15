@@ -33,7 +33,7 @@
   </div>
   <div class="product_footer">
     <p class="product_price">Price: {{product.price}} $</p>
-    <p class="product_price" *ngIf="showTotal">Total Price: {{product.totalPrice}} $</p>
+    <p class="product_price" *ngIf="showTotal">Total Price: {{product.totalPrice.toFixed(2)}} $</p>
   </div>
 </mat-card>
 
