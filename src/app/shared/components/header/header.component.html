@@ -1,0 +1,12 @@
+<mat-toolbar color="primary" class="header">
+  <div>
+    <button class="header_home-button" routerLink="/">My App</button>
+  </div>
+
+  <div>
+    <button class="cart" mat-icon-button routerLink="shopping-cart">
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+    <span class="cart_items" *ngIf="cartItems">{{cartItems}}</span>
+  </div>
+</mat-toolbar>

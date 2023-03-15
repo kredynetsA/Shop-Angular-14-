@@ -20,6 +20,7 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import { CategoryPageComponent } from './pages/category-page/category-page.component';
 import { SidenavComponent } from './shared/components/sidenav/sidenav.component';
+import { HeaderComponent } from './shared/components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { SidenavComponent } from './shared/components/sidenav/sidenav.component'
     CartProductItemComponent,
     CategoryPageComponent,
     SidenavComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

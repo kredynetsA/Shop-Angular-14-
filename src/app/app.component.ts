@@ -7,17 +7,6 @@ import {CartService} from "./services/cart.service";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit, OnDestroy {
-  cartItems: number = 0;
-  subscription: any;
-  constructor(private cartService: CartService, private productService: ProductService) { }
+export class AppComponent  {
 
-  ngOnInit(): void {
-    this.subscription = this.cartService.getProducts().subscribe((res) => {
-      this.cartItems = res.length;
-    })
-  }
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
 }
