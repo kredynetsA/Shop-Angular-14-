@@ -1,9 +1,4 @@
 .sidenav {
-  width: 200px;
-  background-color: #364abd;
-  color: white;
-  text-align: left;
-  padding: 10px 0;
   &_button {
     padding: 20px 0 20px 40px;
     border-bottom: 1px solid #ffffff42;
@@ -14,16 +9,3 @@
   }
 }
 
-.cart {
-  &_items {
-    font-size: 13px;
-    color: white;
-    background: red;
-    border-radius: 23px;
-    padding: 0 5px;
-    position: relative;
-    left: -20px;
-    bottom: -8px;
-    opacity: 0.9;
-  }
-}

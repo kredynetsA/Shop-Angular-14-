@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ProductService} from "../../services/product.service";
 import {Product} from "../../product.interface";
 import {ActivatedRoute} from "@angular/router";
@@ -8,21 +8,26 @@ import {ActivatedRoute} from "@angular/router";
   templateUrl: './category-page.component.html',
   styleUrls: ['./category-page.component.scss']
 })
-export class CategoryPageComponent implements OnInit {
+export class CategoryPageComponent implements OnInit, OnDestroy {
   products: Product[] = [];
   category: string = '';
+  subscription: any;
   constructor(private productService: ProductService,
               private route: ActivatedRoute,
               ) { }
 
   ngOnInit(): void {
-     this.route.params.subscribe((res) => {
+  this.subscription = this.route.params.subscribe((res) => {
        this.category = res['id']
        if (this.category != this.products[0]?.category) {
          this.getProducts()
        }
      })
     this.getProducts()
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   getProducts() {
