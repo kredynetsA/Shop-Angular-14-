@@ -1,7 +1,24 @@
+<mat-toolbar color="primary" class="header">
+  <div>
+    <button mat-icon-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <button class="header_home-button" routerLink="/">My App</button>
+  </div>
 
-<app-header></app-header>
-<mat-sidenav-container>
+  <div>
+    <button class="cart" mat-icon-button routerLink="shopping-cart">
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+    <span class="cart_items" *ngIf="cartItems">{{cartItems}}</span>
+  </div>
+</mat-toolbar>
+
+
+<mat-sidenav-container autosize>
+  <mat-sidenav class="sidenav" mode="side" [fixedInViewport]="true" #drawer >
   <app-sidenav></app-sidenav>
+  </mat-sidenav>
   <div class="container">
     <router-outlet></router-outlet>
   </div>

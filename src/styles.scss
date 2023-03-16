@@ -24,7 +24,8 @@ time, mark, audio, video {
 }
 
 .container {
- margin: 85px 35px 0 220px;
+  width: 95%;
+  margin: 85px auto;
 }
 
 .mat-spinner {
@@ -36,4 +37,11 @@ time, mark, audio, video {
   margin: 20px 0 20px 0;
 }
 
-
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  &_item {
+    flex-shrink: 1;
+    flex-grow: 1;
+  }
+}
