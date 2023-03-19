@@ -20,7 +20,6 @@ export class CartService {
     this.productList.next(product);
   }
   addToCart(product: Product) {
-    console.log(product)
     if (!this.cartList.includes(product)) {
       product.quantity = 1
       product.totalPrice = product.price
