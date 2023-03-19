@@ -18,7 +18,6 @@ import {HttpClientModule} from "@angular/common/http";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {MatSidenavModule} from "@angular/material/sidenav";
-import { CategoryPageComponent } from './pages/category-page/category-page.component';
 import { SidenavComponent } from './shared/components/sidenav/sidenav.component';
 
 @NgModule({
@@ -29,7 +28,6 @@ import { SidenavComponent } from './shared/components/sidenav/sidenav.component'
     ProductComponent,
     ShoppingCartPageComponent,
     CartProductItemComponent,
-    CategoryPageComponent,
     SidenavComponent,
   ],
   imports: [
