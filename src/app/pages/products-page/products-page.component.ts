@@ -38,9 +38,6 @@ export class ProductsPageComponent implements OnInit, OnDestroy {
   getAllProducts() {
     const subscription = this.productService.getProducts().subscribe((res: Product[]) => {
       this.products = res
-      this.products.forEach((p:Product) => {
-        Object.assign(p, {quantity: 1, totalPrice: p.price})
-      })
     })
     this.subscriptions.push(subscription)
   }
@@ -48,9 +45,6 @@ export class ProductsPageComponent implements OnInit, OnDestroy {
   getProductsByCategory(category: string) {
     const subscription = this.productService.getCategory(category).subscribe((res:any) => {
       this.products = res
-      this.products.forEach((p:Product) => {
-        Object.assign(p, {quantity: 1, totalPrice: p.price})
-      })
     })
     this.subscriptions.push(subscription)
   }
