@@ -21,6 +21,7 @@ export class CartService {
   }
   addToCart(product: Product) {
     if (!this.cartList.includes(product)) {
+      product.quantity = 1
       this.cartList.push(product)
       this.productList.next(this.cartList);
     } else {
