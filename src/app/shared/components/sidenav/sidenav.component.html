@@ -1,9 +1,12 @@
-<div class="sidenav_button" routerLink="/">
-  All Products
+<div routerLink="/">
+  <div class="sidenav_button"  (click)="setCategory('')">
+    All Products
+  </div>
+  <div class="sidenav_button"
+       *ngFor="let category of categories"
+       (click)="setCategory(category)">
+    {{category}}
+  </div>
 </div>
-<div class="sidenav_button"
-     *ngFor="let category of categories"
-     [routerLink]="['category/', category]">
-  {{category}}
-</div>
+
 
