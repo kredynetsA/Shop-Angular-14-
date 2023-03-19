@@ -5,11 +5,11 @@ import {CartService} from "../../services/cart.service";
 
 
 @Component({
-  selector: 'app-home-page',
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.scss']
+  selector: 'app-products-page',
+  templateUrl: './products-page.component.html',
+  styleUrls: ['./products-page.component.scss']
 })
-export class HomePageComponent implements OnInit, OnDestroy {
+export class ProductsPageComponent implements OnInit, OnDestroy {
   products: Product[] = [];
   subscriptions: any[] = [];
   category?: string;
