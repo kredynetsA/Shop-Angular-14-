@@ -16,6 +16,9 @@ export class SidenavComponent implements OnInit, OnDestroy {
       this.categories = res
     })
   }
+  setCategory(category: string) {
+    this.productService.category.next(category)
+  }
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
