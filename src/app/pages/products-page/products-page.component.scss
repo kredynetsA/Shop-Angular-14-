@@ -1,0 +1,27 @@
+
+
+.products {
+  display: grid;
+  --colums: 5;
+
+  grid-template-columns:  repeat(var(--colums), minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+
+  @media (max-width: 1200px) {
+    --colums: 4;
+  }
+
+  @media (max-width: 1000px) {
+    --colums: 3;
+  }
+
+  @media (max-width: 700px) {
+    --colums: 2;
+  }
+
+  @media (max-width: 450px) {
+    --colums: 1;
+  }
+
+}
